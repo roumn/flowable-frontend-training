@@ -1,12 +1,12 @@
 import * as React from "react";
 import {_, Form} from "@flowable/forms";
-import {suite} from "../form-components";
+import Components from "../form-components/suite";
 import "@flowable/forms/flwforms.min.css";
 
 
 const formProps = {
     debug: true,
-    Components: suite
+    Components
 };
 
 type StorybookFormProps = {

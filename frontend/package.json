@@ -2,14 +2,22 @@
   "name": "frontend",
   "version": "1.0.0",
   "scripts": {
-    "build": "flowbuild build -o ../training-handson-work/src/main/resources/static/ext --outputCss ../training-handson-work/src/main/resources/static/ext",
-    "watch": "flowbuild watch -o ../training-handson-work/src/main/resources/static/ext --outputCss ../training-handson-work/src/main/resources/static/ext",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "dev": "npm run dev-standard && npm run dev-suite",
+    "dev-standard": "rimraf dist && npm run build-standard && npm run copy-to-work",
+    "build-standard": "npm run clean-work-folder && rimraf dist && rollup -c --environment BUILD:production --environment BUILDTYPE:standard\"",
+    "build-suite": "npm run clean-design-folder && rimraf dist-demosuite && rollup -c --environment BUILD:production --environment BUILDTYPE:suite",
+    "create-folders": "mkdirp ./dist && mkdirp ../src/main/resources/static/ext",
+    "clean-work-folder": "rimraf ../training-handson-work/src/main/resources/static/ext && mkdirp ../training-handson-work/src/main/resources/static/ext/",
+    "clean-design-folder": "rimraf ../training-handson-design/src/main/resources/public/js/flowable-forms-demosuite/ && mkdirp ../training-handson-design/src/main/resources/public/js/flowable-forms-demosuite/",
+    "dev-suite": "rimraf dist-suite && npm run build-suite && npm run copy-to-design",
+    "copy-to-work": "cpx ./dist/**/* ../training-handson-work/src/main/resources/static/ext",
+    "copy-to-design": "cpx  ./dist-suite/**/* ../training-handson-design/src/main/resources/public/js/flowable-forms-demosuite/"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
-    "@flowable/work-scripts": "3.11.5",
+    "@flowable/work-scripts": "3.13.7",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
@@ -19,7 +27,6 @@
     "@storybook/manager-webpack5": "^6.5.16",
     "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
-    "storybook-addon-mock": "^3.2.0",
     "babel-loader": "^9.1.2",
     "concurrently": "^7.6.0",
     "cpx": "^1.5.0",
@@ -27,9 +34,15 @@
     "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-scss": "^4.0.0",
     "rollup-plugin-sourcemaps": "^0.6.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "@rollup/plugin-replace": "^5.0.2",
+    "@rollup/plugin-typescript": "^11.1.1",
     "sass": "^1.58.3",
     "sass-loader": "^13.2.0",
-    "typescript": "^4.9.5"
+    "storybook-addon-mock": "^3.2.0",
+    "typescript": "^4.9.5",
+    "cpr": "^3.0.1"
   },
   "dependencies": {
     "react": "17.0.2",

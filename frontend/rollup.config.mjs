@@ -10,7 +10,7 @@ import * as react from 'react';
 const production = process.env.BUILD === "production";
 const suiteActive = process.env.BUILDTYPE === "suite"
 
-const input = !suiteActive? "src/index.tsx" : "src/form-components/suite.tsx"
+const input = !suiteActive? "src/form-components/formComponents.tsx" : "src/form-components/suite.tsx"
 const outputJs = !suiteActive? "./dist/custom.js" : "./dist-suite/index.js"
 const outputCss = !suiteActive? "./dist/custom.css" : "./dist-suite/index.css"
 
