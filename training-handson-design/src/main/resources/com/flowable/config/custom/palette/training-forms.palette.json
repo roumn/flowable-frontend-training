@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer-docs.flowable.com/schemas/palette.json",
+  "Palette-Id": "flowable-demo-suite",
+  "patchPalettes": [
+    "flowable-form-palette"
+  ],
+  "resourceBundles": [
+    "com/flowable/config/custom/palette/training-i18n"
+  ],
+  "groups": {
+    "training": {
+      "index": 999
+    }
+  },
+  "stencils": [
+    {
+      "id": "hello-world",
+      "xmlTag": "helloworld",
+      "title": "Hello World",
+      "viewPath": "component-presentations/editor-views/button.svg",
+      "icon": "../palette-icons?id=component-presentations/palette-icons/button.png",
+      "bigIcon": "../palette-icons?id=component-presentations/palette-icons/button.svg",
+      "superId": "base-component",
+      "groups": [
+        "training"
+      ],
+      "properties": [
+        {
+          "id": "value",
+          "visible": false
+        },
+        {
+          "id": "locationToGreet",
+          "title": "Location to Greet",
+          "value": "World",
+          "category": "edoras",
+          "path": "extraSettings.locationToGreet",
+          "index": 10
+        }
+      ],
+      "layout": [
+        {
+          "type": "layout.form.controls",
+          "minWidth": 100,
+          "minHeight": 50,
+          "minControlWidth": 100,
+          "minControlHeight": 100,
+          "offsetX": 10,
+          "offsetY": 0
+        }
+      ]
+    }
+  ],
+  "removestencils": [
+  ]
+}

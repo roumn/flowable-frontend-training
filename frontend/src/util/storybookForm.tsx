@@ -2,6 +2,7 @@ import * as React from "react";
 import {_, Form} from "@flowable/forms";
 import Components from "../form-components/suite";
 import "@flowable/forms/flwforms.min.css";
+import {FormLayout} from "@flowable/forms/flowable-forms/src/flw/Model";
 
 
 const formProps = {
@@ -10,7 +11,7 @@ const formProps = {
 };
 
 type StorybookFormProps = {
-    config?: {};
+    config?: FormLayout;
     sfs?: string;
     payload?: any;
     lang?: string;

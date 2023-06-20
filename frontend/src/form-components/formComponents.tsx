@@ -1,6 +1,6 @@
 import {ExternalFormComponent} from "@flowable/work-scripts";
-import {HelloWorld} from "./CustomComposition/HelloWorld";
+import {HelloWorld} from "./HelloWorld/HelloWorld";
 
 export const formComponents: ExternalFormComponent[] = [
-    ["helloWorld", HelloWorld],
+    ["helloworld", HelloWorld],
 ]

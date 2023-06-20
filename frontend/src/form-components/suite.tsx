@@ -1,5 +1,5 @@
-import {HelloWorld} from "./CustomComposition/HelloWorld";
+import {HelloWorld} from "./HelloWorld/HelloWorld";
 
 export default {
-    helloWorld: HelloWorld
+    helloworld: HelloWorld
 }

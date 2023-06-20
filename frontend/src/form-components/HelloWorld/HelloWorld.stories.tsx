@@ -5,10 +5,11 @@ export const World = () =>
     <StorybookForm
         payload={{}}
         sfs={`
-            helloWorld: label="World" size=12 [[planet=Earth]]        
+            helloWorld: label="World" size=12 [[locationToGreet=Earth]]        
         `}
     />
 
 export default {
-    title: 'Hello World'
+    title: 'Hello World Component'
 }
+
