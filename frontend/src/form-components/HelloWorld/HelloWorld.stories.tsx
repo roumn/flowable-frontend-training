@@ -13,7 +13,7 @@ export const Zurich = () =>
     <StorybookForm
         payload={{}}
         sfs={`
-            helloworld: size=12 [[locationToGreet=Zurich]]        
+            trainingHelloworld: size=12 [[locationToGreet=Zurich]]        
         `}
     />
 
@@ -21,7 +21,7 @@ export const NoProperties = () =>
     <StorybookForm
         payload={{}}
         sfs={`
-            helloworld: size=12 [[]]        
+            trainingHelloworld: size=12 [[]]        
         `}
     />
 
