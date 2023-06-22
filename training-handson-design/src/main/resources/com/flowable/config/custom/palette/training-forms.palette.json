@@ -70,7 +70,7 @@
       "id": "map",
       "xmlTag": "trainingFlowableMap",
       "title": "Map",
-      "viewPath": "component-presentations/editor-views/button.svg",
+      "viewPath": "component-presentations/editor-views/map.svg",
       "bigIcon": "../palette-icons?id=component-presentations/palette-icons/map.svg",
       "icon": "../palette-icons?id=component-presentations/palette-icons/map.svg",
       "superId": "base-component",
@@ -79,7 +79,9 @@
       ],
       "layout": [
         {
-          "type": "layout.form.controls"
+          "type": "layout.form.controls",
+          "minHeight": 100,
+          "minControlHeight": 100
         }
       ],
       "properties": [
@@ -90,6 +92,15 @@
           "category": "details",
           "type": "SimpleTextExpression",
           "path": "extraSettings.center",
+          "index": 10
+        },
+        {
+          "id": "editable",
+          "title": "Editable",
+          "value": "false",
+          "category": "details",
+          "type": "Boolean",
+          "path": "extraSettings.editable",
           "index": 10
         }
       ]

@@ -17,6 +17,14 @@ export const MapWithoutMarker = () =>
         `}
     />
 
+export const Editable = () =>
+    <StorybookForm
+        payload={{startLocation: [47.37, 8.54], currentLocation: []}}
+        sfs={`
+            trainingFlowableMap: value={{currentLocation}} size=12 [[editable=true, center={{startLocation}}]]        
+        `}
+    />
+
 export default {
     title: 'Flowable Map'
 }
