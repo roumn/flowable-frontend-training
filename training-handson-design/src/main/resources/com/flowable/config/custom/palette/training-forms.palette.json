@@ -65,6 +65,34 @@
           "optional": false
         }
       ]
+    },
+    {
+      "id": "map",
+      "xmlTag": "trainingFlowableMap",
+      "title": "Map",
+      "viewPath": "component-presentations/editor-views/button.svg",
+      "bigIcon": "../palette-icons?id=component-presentations/palette-icons/map.svg",
+      "icon": "../palette-icons?id=component-presentations/palette-icons/map.svg",
+      "superId": "base-component",
+      "groups": [
+        "training"
+      ],
+      "layout": [
+        {
+          "type": "layout.form.controls"
+        }
+      ],
+      "properties": [
+        {
+          "id": "center",
+          "title": "Center",
+          "value": "{{[47.37, 8.54]}}",
+          "category": "details",
+          "type": "SimpleTextExpression",
+          "path": "extraSettings.center",
+          "index": 10
+        }
+      ]
     }
   ]
 }
