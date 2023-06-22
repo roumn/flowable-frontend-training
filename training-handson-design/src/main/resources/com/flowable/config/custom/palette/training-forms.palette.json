@@ -53,6 +53,16 @@
           "path": "extraSettings.locationToGreet",
           "runtime": true,
           "index": 10
+        },
+        {
+          "id": "greeting",
+          "title": "Greeting",
+          "value": "Hello",
+          "category": "details",
+          "type": "SimpleTextExpression",
+          "path": "extraSettings.greeting",
+          "index": 20,
+          "optional": false
         }
       ]
     }
