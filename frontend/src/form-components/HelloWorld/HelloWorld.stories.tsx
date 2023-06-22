@@ -9,6 +9,23 @@ export const World = () =>
         `}
     />
 
+export const Zurich = () =>
+    <StorybookForm
+        payload={{}}
+        sfs={`
+            helloworld: size=12 [[locationToGreet=Zurich]]        
+        `}
+    />
+
+export const NoProperties = () =>
+    <StorybookForm
+        payload={{}}
+        sfs={`
+            helloworld: size=12 [[]]        
+        `}
+    />
+
+
 export default {
     title: 'Hello World Component'
 }
