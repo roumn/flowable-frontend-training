@@ -1,8 +1,9 @@
 {
   "$schema": "https://developer-docs.flowable.com/schemas/palette.json",
-  "Palette-Id": "flowable-demo-suite",
+  "Palette-Id": "flowable-frontend-palette",
   "patchPalettes": [
-    "flowable-form-palette"
+    "flowable-form-palette",
+    "flowable-page-palette"
   ],
   "resourceBundles": [
     "com/flowable/config/custom/palette/training-i18n"
@@ -18,11 +19,16 @@
       "xmlTag": "helloworld",
       "title": "Hello World",
       "viewPath": "component-presentations/editor-views/button.svg",
-      "icon": "../palette-icons?id=component-presentations/palette-icons/button.png",
-      "bigIcon": "../palette-icons?id=component-presentations/palette-icons/button.svg",
+      "bigIcon": "../palette-icons?id=component-presentations/palette-icons/hello-world.svg",
+      "icon": "../palette-icons?id=component-presentations/palette-icons/hello-world.svg",
       "superId": "base-component",
       "groups": [
         "training"
+      ],
+      "layout": [
+        {
+          "type": "layout.form.controls"
+        }
       ],
       "properties": [
         {
@@ -33,24 +39,13 @@
           "id": "locationToGreet",
           "title": "Location to Greet",
           "value": "World",
-          "category": "edoras",
+          "category": "details",
+          "type": "SimpleTextExpression",
           "path": "extraSettings.locationToGreet",
           "index": 10
         }
-      ],
-      "layout": [
-        {
-          "type": "layout.form.controls",
-          "minWidth": 100,
-          "minHeight": 50,
-          "minControlWidth": 100,
-          "minControlHeight": 100,
-          "offsetX": 10,
-          "offsetY": 0
-        }
       ]
     }
-  ],
-  "removestencils": [
   ]
 }
+
