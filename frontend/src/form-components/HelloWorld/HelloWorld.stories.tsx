@@ -29,7 +29,7 @@ export const Disabled = () =>
     <StorybookForm
         payload={{}}
         sfs={`
-            helloworld: size=12 enabled=false [[]]        
+            trainingHelloworld: size=12 enabled=false [[]]        
         `}
     />
 
@@ -37,7 +37,7 @@ export const Label = () =>
     <StorybookForm
         payload={{}}
         sfs={`
-            helloworld: label=My Label size=12 [[]]        
+            trainingHelloworld: label=My Label size=12 [[]]        
         `}
     />
 
