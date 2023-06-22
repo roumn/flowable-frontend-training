@@ -16,7 +16,7 @@
   "stencils": [
     {
       "id": "hello-world",
-      "xmlTag": "helloworld",
+      "xmlTag": "trainingHelloworld",
       "title": "Hello World",
       "viewPath": "component-presentations/editor-views/button.svg",
       "bigIcon": "../palette-icons?id=component-presentations/palette-icons/hello-world.svg",
