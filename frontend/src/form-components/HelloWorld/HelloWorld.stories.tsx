@@ -5,7 +5,7 @@ export const World = () =>
     <StorybookForm
         payload={{}}
         sfs={`
-            helloworld: size=12 [[locationToGreet=Earth]]        
+            trainingHelloworld: size=12 [[locationToGreet=Earth]]        
         `}
     />
 
