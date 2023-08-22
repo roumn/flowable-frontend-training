@@ -53,55 +53,6 @@
           "path": "extraSettings.locationToGreet",
           "runtime": true,
           "index": 10
-        },
-        {
-          "id": "greeting",
-          "title": "Greeting",
-          "value": "Hello",
-          "category": "details",
-          "type": "SimpleTextExpression",
-          "path": "extraSettings.greeting",
-          "index": 20,
-          "optional": false
-        }
-      ]
-    },
-    {
-      "id": "map",
-      "xmlTag": "trainingFlowableMap",
-      "title": "Map",
-      "viewPath": "component-presentations/editor-views/map.svg",
-      "bigIcon": "../palette-icons?id=component-presentations/palette-icons/map.svg",
-      "icon": "../palette-icons?id=component-presentations/palette-icons/map.svg",
-      "superId": "base-component",
-      "groups": [
-        "training"
-      ],
-      "layout": [
-        {
-          "type": "layout.form.controls",
-          "minHeight": 100,
-          "minControlHeight": 100
-        }
-      ],
-      "properties": [
-        {
-          "id": "center",
-          "title": "Center",
-          "value": "{{[47.37, 8.54]}}",
-          "category": "details",
-          "type": "SimpleTextExpression",
-          "path": "extraSettings.center",
-          "index": 10
-        },
-        {
-          "id": "editable",
-          "title": "Editable",
-          "value": "false",
-          "category": "details",
-          "type": "Boolean",
-          "path": "extraSettings.editable",
-          "index": 10
         }
       ]
     }
