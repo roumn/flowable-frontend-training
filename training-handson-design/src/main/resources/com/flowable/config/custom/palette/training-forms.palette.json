@@ -10,6 +10,7 @@
   ],
   "groups": {
     "training": {
+      "title": "Training",
       "index": 999
     }
   },
@@ -18,7 +19,8 @@
       "id": "hello-world",
       "xmlTag": "trainingHelloworld",
       "title": "Hello World",
-      "viewPath": "component-presentations/editor-views/button.svg",
+      "description": "Custom greeting component with optional label",
+      "viewPath": "component-presentations/editor-views/htmlComponent.svg",
       "bigIcon": "../palette-icons?id=component-presentations/palette-icons/hello-world.svg",
       "icon": "../palette-icons?id=component-presentations/palette-icons/hello-world.svg",
       "superId": "base-component",
@@ -36,12 +38,17 @@
           "visible": false
         },
         {
+          "id": "default-value",
+          "visible": false
+        },
+        {
           "id": "locationToGreet",
           "title": "Location to Greet",
           "value": "World",
           "category": "details",
           "type": "SimpleTextExpression",
           "path": "extraSettings.locationToGreet",
+          "runtime": true,
           "index": 10
         }
       ]
