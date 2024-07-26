@@ -21,7 +21,7 @@ export const Preview = () =>
     <StorybookForm
         payload={{startLocation: [47.37, 8.54], currentLocation: []}}
         sfs={`
-            trainingFlowableMap: __designMode=preview enabled=true value={{currentLocation}} size=12 [[center={{startLocation}}]]        
+            trainingFlowableMap: __designMode=editor enabled=true value={{currentLocation}} size=12 [[center={{startLocation}}]]        
         `}
     />
 
