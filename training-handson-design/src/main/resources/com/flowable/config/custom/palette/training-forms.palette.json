@@ -2,18 +2,24 @@
   "$schema": "https://developer-docs.flowable.com/schemas/palette.json",
   "Palette-Id": "flowable-frontend-palette",
   "patchPalettes": [
-    "flowable-form-palette",
-    "flowable-page-palette"
+    "flowable-work-form-palette",
+    "flowable-work-page-palette"
   ],
   "resourceBundles": [
     "com/flowable/config/custom/palette/training-i18n"
   ],
   "groups": {
     "training": {
-      "title": "Training",
-      "index": 999
+      "index": 1
     }
   },
+  "presentations": [
+    {
+      "id": "hello-world.presentation",
+      "bigIcon": "component-presentations/palette-icons/hello-world.svg",
+      "icon": "component-presentations/palette-icons/hello-world.svg"
+    }
+  ],
   "stencils": [
     {
       "id": "hello-world",
@@ -21,16 +27,10 @@
       "title": "Hello World",
       "description": "Custom greeting component with optional label",
       "viewPath": "component-presentations/editor-views/htmlComponent.svg",
-      "bigIcon": "../palette-icons?id=component-presentations/palette-icons/hello-world.svg",
-      "icon": "../palette-icons?id=component-presentations/palette-icons/hello-world.svg",
-      "superId": "base-component",
+      "superId": "Component",
+      "presentationId": "hello-world.presentation",
       "groups": [
         "training"
-      ],
-      "layout": [
-        {
-          "type": "layout.form.controls"
-        }
       ],
       "properties": [
         {

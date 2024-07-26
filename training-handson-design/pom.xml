@@ -37,6 +37,11 @@
             <version>${com.flowable.platform.version}</version>
         </dependency>
         <dependency>
+            <groupId>com.flowable.design</groupId>
+            <artifactId>flowable-spring-boot-starter-design-actuator</artifactId>
+            <version>${com.flowable.platform.version}</version>
+        </dependency>
+        <dependency>
             <groupId>com.flowable.platform</groupId>
             <artifactId>flowable-platform-palette</artifactId>
             <version>${com.flowable.platform.version}</version>
@@ -51,6 +56,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
         </dependency>
 
         <!-- Testing -->

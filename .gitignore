@@ -23,3 +23,4 @@ docker/data/
 
 # H2 Databases
 h2-database/
+*storybook.log
