@@ -33,6 +33,22 @@ export const Preview = () =>
         `}
     />
 
+export const MapWithCustomMarkersUninitialized = () =>
+    <StorybookForm
+        payload={{ center: [47.37, 8.54]}}
+        sfs={`
+            trainingFlowableMap: size=12 enabled=true [[center={{center}} markers= || id:pin1,label:Pin 1,color:blue || id:pin2,label:Pin 2,color:green]]            
+        `}
+    />
+
+export const MapWithCustomMarkerInitialized = () =>
+    <StorybookForm
+        payload={{pin1: [47.37, 8.54], pin2: [47.375, 8.545], center: [47.37, 8.54]}}
+        sfs={`
+            trainingFlowableMap: size=12 enabled=true [[center={{center}} markers= || id:pin1,label:Pin 1,color:blue || id:pin2,label:Pin 2,color:green]]            
+        `}
+    />
+
 export default {
     title: 'Flowable Map'
 }
