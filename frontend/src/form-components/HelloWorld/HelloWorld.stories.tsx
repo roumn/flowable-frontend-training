@@ -33,6 +33,7 @@ export const CustomGreeting = () =>
         `}
     />
 
+
 export const Disabled = () =>
     <StorybookForm
         payload={{}}
@@ -46,22 +47,6 @@ export const Label = () =>
         payload={{}}
         sfs={`
             trainingHelloworld: label=My Label size=12 [[]]        
-        `}
-    />
-
-export const Disabled = () =>
-    <StorybookForm
-        payload={{}}
-        sfs={`
-            helloworld: size=12 enabled=false [[]]        
-        `}
-    />
-
-export const Label = () =>
-    <StorybookForm
-        payload={{}}
-        sfs={`
-            helloworld: label=My Label size=12 [[]]        
         `}
     />
 
