@@ -18,6 +18,11 @@
       "id": "hello-world.presentation",
       "bigIcon": "component-presentations/palette-icons/hello-world.svg",
       "icon": "component-presentations/palette-icons/hello-world.svg"
+    },
+    {
+      "id": "flowable-map.presentation",
+      "bigIcon": "component-presentations/palette-icons/map.svg",
+      "icon": "component-presentations/palette-icons/map.svg"
     }
   ],
   "stencils": [
@@ -55,7 +60,33 @@
           "index": 10
         }
       ]
+    },
+    {
+      "id": "flowable-map",
+      "xmlTag": "trainingFlowableMap",
+      "title": "Flowable Map",
+      "description": "Map component with selectable markers",
+      "superId": "BaseComponent",
+      "presentationId": "flowable-map.presentation",
+      "groups": [
+        "training"
+      ],
+      "propertyPackages": [
+        "labelWithDefaultValueAttributes",
+        "commonAttributes",
+        "commonInputAttributes"
+      ],
+      "properties": [
+        {
+          "id": "center",
+          "title": "Center",
+          "category": "details",
+          "type": "SimpleTextExpression",
+          "path": "extraSettings.center",
+          "runtime": true,
+          "index": 20
+        }
+      ]
     }
   ]
 }
-
