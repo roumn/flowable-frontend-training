@@ -82,9 +82,7 @@
         "training"
       ],
       "propertyPackages": [
-        "labelWithDefaultValueAttributes",
-        "commonAttributes",
-        "commonInputAttributes"
+        "labelWithDefaultValueAttributes"
       ],
       "properties": [
         {

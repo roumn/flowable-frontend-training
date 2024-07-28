@@ -1,7 +1,8 @@
-import {_, Model} from '@flowable/forms';
-import React, {useState} from 'react';
-import {Map, Marker, Point} from "pigeon-maps";
 import './FlowableMap.scss';
+import {_, Model, ComponentStore} from '@flowable/forms';
+import {FormCache} from '@flowable/forms/flowable-forms/src/flw/FormCache';
+import React from 'react';
+import {Map, Marker, Point} from "pigeon-maps";
 
 type MarkerConfig = {
     id: string
@@ -15,13 +16,31 @@ const defaultMarker: MarkerConfig = {
     color: "red"
 }
 
+const selectConfig = (items: MarkerConfig[]) => {
+    return {
+        "id": "pin-select",
+        "value": "{{$payload.$temp.selectedPin}}",
+        "defaultValue": items.length == 0 ? "" : items[0],
+        "extraSettings": {
+            "multi": false,
+            "dataSource": "Static",
+            "items": items,
+            "storage": "Full",
+            "identity": "id",
+            "formatItem": "{{$item.label}}",
+        },
+        "label": "Pins",
+        "type": "select"
+    }
+}
+
+
 export function FlowableMap(props: Model.Props) {
     const Components = props.Components;
     const {config, onChange, payload} = props;
     const {extraSettings, enabled} = config;
     const markers: MarkerConfig[] = _.get(extraSettings, "markers", []);
 
-    const [selectedMarker, setSelectedMarker] = useState<MarkerConfig>(markers[0] || defaultMarker);
 
     // Used to generate style class names. See: https://getbem.com/introduction/
     const bem = _.bem("flowableMap");
@@ -31,7 +50,8 @@ export function FlowableMap(props: Model.Props) {
 
     const handleClick = (onClickEvent: { event: any, latLng: number[], pixel: any }) => {
         if(enabled) {
-            onChange({$path: selectedMarker.id, $value: onClickEvent.latLng});
+            const selectedMarker = _.get(payload, "$temp.selectedPin", defaultMarker);
+            onChange({$path: selectedMarker?.id, $value: onClickEvent.latLng});
         }
     }
 
@@ -40,10 +60,9 @@ export function FlowableMap(props: Model.Props) {
             Flowable Map</div>;
     }
 
-    const handleMarkerChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        const selected = markers.find(marker => marker.label === event.target.value);
-        setSelectedMarker(selected || defaultMarker);
-    }
+    const definition = config as Model.ResolvedColumn & {
+        resolvedSelect: Model.ResolvedColumn;
+    };
 
     function renderMarkers() {
         return markers
@@ -57,13 +76,13 @@ export function FlowableMap(props: Model.Props) {
     return (
         <div className={bem('container')}>
             <Components.label {...props}/>
-            {markers?.length > 0 && <div className={bem('select-container')}>
-                <select onChange={handleMarkerChange} value={selectedMarker.label || ''}>
-                    {markers.map(marker => (
-                        <option key={marker.label} value={marker.label}>{marker.label}</option>
-                    ))}
-                </select>
-            </div>}
+            {markers.length > 0 &&
+                <Components.select
+                    {...props}
+                    config={definition.resolvedSelect}
+                    onChange={val => onChange({$path: definition.resolvedSelect.$path, $value: val})}
+                />
+            }
             <Map height={300}
                  width={300}
                  center={center}
@@ -74,3 +93,19 @@ export function FlowableMap(props: Model.Props) {
         </div>
     );
 }
+
+FlowableMap.$resolve = (
+    unresolved: Model.Column,
+    scope: Model.Payload,
+    addData: Model.Payload,
+    Components: ComponentStore,
+    formCache: FormCache,
+    currentPath: string
+) => {
+    const resolve = (Components["panel"]).$resolve;
+    const resolved = resolve(unresolved, scope, addData, Components, formCache, currentPath);
+    const items = resolved?.extraSettings?.markers ?? [];
+    const resolvedSelect = resolve(selectConfig(items), resolved.value, addData, Components, formCache, currentPath);
+    return {...resolved, resolvedSelect};
+};
+
