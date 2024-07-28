@@ -58,6 +58,16 @@
           "path": "extraSettings.locationToGreet",
           "runtime": true,
           "index": 10
+        },
+        {
+          "id": "greeting",
+          "title": "Greeting",
+          "value": "Hello",
+          "category": "details",
+          "type": "SimpleTextExpression",
+          "path": "extraSettings.greeting",
+          "index": 20,
+          "optional": false
         }
       ]
     },
@@ -66,7 +76,7 @@
       "xmlTag": "trainingFlowableMap",
       "title": "Flowable Map",
       "description": "Map component with selectable markers",
-      "superId": "BaseComponent",
+      "superId": "Component",
       "presentationId": "flowable-map.presentation",
       "groups": [
         "training"
@@ -78,13 +88,24 @@
       ],
       "properties": [
         {
-          "id": "center",
-          "title": "Center",
+          "id": "centerLon",
+          "title": "Center Longitude",
+          "category": "details",
+          "type": "Float",
+          "path": "extraSettings.centerLon",
+          "runtime": true,
+          "editCategory": "center",
+          "index": 21
+        },
+        {
+          "id": "centerLat",
+          "title": "Center Latitude",
           "category": "details",
           "type": "SimpleTextExpression",
-          "path": "extraSettings.center",
+          "path": "extraSettings.centerLat",
           "runtime": true,
-          "index": 20
+          "editCategory": "center",
+          "index": 22
         }
       ]
     }
