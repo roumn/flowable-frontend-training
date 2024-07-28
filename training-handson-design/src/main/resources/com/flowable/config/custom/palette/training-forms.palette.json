@@ -32,6 +32,9 @@
       "groups": [
         "training"
       ],
+      "propertyPackages": [
+        "labelWithDefaultValueAttributes"
+      ],
       "properties": [
         {
           "id": "value",
