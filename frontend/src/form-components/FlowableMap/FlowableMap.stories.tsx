@@ -17,14 +17,6 @@ export const Center = () =>
         `}
     />
 
-export const Value = () =>
-    <StorybookForm
-        payload={{centerLon: 47.37, centerLat: 8.54}}
-        sfs={`
-            trainingFlowableMap: enabled=false value={{[centerLon, centerLat]}} size=12 [[centerLon={{location}} centerLat={{location}}]]        
-        `}
-    />
-
 export const Preview = () =>
     <StorybookForm
         payload={{startLocation: [47.37, 8.54], currentLocation: []}}

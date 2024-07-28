@@ -72,7 +72,6 @@
       ]
     },
     {
-      "id": "flowable-map",
       "xmlTag": "trainingFlowableMap",
       "title": "Flowable Map",
       "description": "Map component with selectable markers",
@@ -106,6 +105,37 @@
           "runtime": true,
           "editCategory": "center",
           "index": 22
+        },
+        {
+          "id": "markers",
+          "title": "Markers",
+          "category": "details",
+          "path": "extraSettings.markers",
+          "type": "Complex",
+          "index": 30,
+          "complexItems": [
+            {
+              "id": "id",
+              "title": "ID",
+              "type": "SimpleTextExpression",
+              "path": "id",
+              "index": 0
+            },
+            {
+              "id": "label",
+              "title": "Label",
+              "type": "SimpleTextExpression",
+              "path": "label",
+              "index": 10
+            },
+            {
+              "id": "color",
+              "title": "Color",
+              "type": "Color",
+              "path": "color",
+              "index": 20
+            }
+          ]
         }
       ]
     }
