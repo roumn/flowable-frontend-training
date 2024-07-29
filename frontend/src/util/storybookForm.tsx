@@ -14,6 +14,7 @@ type StorybookFormProps = {
     config?: FormLayout;
     sfs?: string;
     payload?: any;
+    translations?: any;
     lang?: string;
     additionalData?: any;
 }
@@ -24,6 +25,7 @@ export function StorybookForm(props: StorybookFormProps) {
         {...formProps}
         payload={props.payload}
         lang={props.lang}
+        translations={props.translations}
         config={props.config || _.sfs.parse(props.sfs as string)}
         additionalData={props.additionalData}
     />

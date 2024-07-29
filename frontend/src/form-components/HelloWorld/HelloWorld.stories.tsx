@@ -50,6 +50,33 @@ export const Label = () =>
         `}
     />
 
+const translations = {
+    "it_it": {
+        "helloWorld.greeting": "Buongiorno"
+    },
+    "de_de": {
+        "helloWorld.greeting": "Hallo"
+    }
+};
+
+export const DefaultLanguage = () =>
+    <StorybookForm
+        payload={{}}
+        translations={translations}
+        lang={"en"}
+        sfs={`
+            trainingHelloworld:[[locationToGreet=World]]`}
+    />
+
+export const Italian = () =>
+    <StorybookForm
+        payload={{}}
+        translations={translations}
+        lang={"it_it"}
+        sfs={`
+            trainingHelloworld:[[locationToGreet=World]] `}
+    />
+
 
 export default {
     title: 'Hello World Component'

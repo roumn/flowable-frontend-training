@@ -67,7 +67,8 @@
           "type": "SimpleTextExpression",
           "path": "extraSettings.greeting",
           "index": 20,
-          "optional": false
+          "optional": false,
+          "multilanguage": true
         }
       ]
     },

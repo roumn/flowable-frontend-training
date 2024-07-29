@@ -10,7 +10,8 @@ export function HelloWorld(props: Model.Props) {
     const bem = _.bem("helloWorld");
 
     const locationToGreet = _.get(extraSettings, "locationToGreet", "World");
-    const greeting = _.get(extraSettings, "greeting", "Hello");
+    const greetingTranslated = _.translate(props.translations, props.lang, "helloWorld.greeting");
+
     const style: CSSProperties = {
         color: enabled == false ? "lightgrey" : "black"
     }
@@ -19,7 +20,7 @@ export function HelloWorld(props: Model.Props) {
         <div className={bem('container')}>
             <Components.label {...props}/>
             <div style={style}>
-                {greeting} <b>{locationToGreet}</b>
+                {greetingTranslated} <b>{locationToGreet}</b>
             </div>
         </div>
     );
