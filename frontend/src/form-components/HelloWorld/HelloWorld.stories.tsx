@@ -5,23 +5,8 @@ export const World = () =>
     <StorybookForm
         payload={{}}
         sfs={`
-            trainingHelloworld: size=12 [[locationToGreet=Earth]]        
-        `}
-    />
-
-export const Zurich = () =>
-    <StorybookForm
-        payload={{}}
-        sfs={`
-            trainingHelloworld: size=12 [[locationToGreet=Zurich]]        
-        `}
-    />
-
-export const NoProperties = () =>
-    <StorybookForm
-        payload={{}}
-        sfs={`
-            trainingHelloworld: size=12 [[]]        
+            trainingHelloworld: size=12 [[locationToGreet=Earth]]       
+            number: col=0 size=12 description-position=bottom description-align=left modelEvents= ||  value={{number}} tabIndex=0 label=Number customValidations= ||  __designMode=preview [[fractionSize=0 numberType=integer type=one validationPanelDisplay=show]] 
         `}
     />
 
